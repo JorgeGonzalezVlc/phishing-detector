@@ -179,3 +179,15 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Credenciales Gmail
+credentials.json
+token.pickle
+token.json
+
+# Base de datos local
+*.db
+*.sqlite
+
+# Variables de entorno
+.env
