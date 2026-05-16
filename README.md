@@ -52,6 +52,16 @@ Gmail API → Parser → IOC Extractor → Risk Engine → LLM (Claude) → JSON
 - Lenguaje urgente / ingeniería social
 - Petición de credenciales
 
+## Acciones automáticas
+
+| Clasificación | Risk Score | Acción | Carpeta Gmail |
+|---|---|---|---|
+| Phishing crítico | ≥ 90 | delete | Phishing/Eliminado |
+| Sospechoso | ≥ 70 | escalate | Phishing/Revisar |
+| Cuarentena | ≥ 50 | quarantine | Phishing/Cuarentena |
+| Revisión | ≥ 25 | review | Phishing/Revisar |
+| Legítimo | < 25 | safe | — |
+
 ## Instalación
 
 ```bash
@@ -64,6 +74,16 @@ pip install -r requirements.txt
 
 Configura tus credenciales en `.env` (ver `.env.example`).
 
+## Uso
+
+```bash
+# Analizar emails no leídos
+python run.py
+
+# Arrancar la API REST
+uvicorn main:app --reload
+```
+
 ## Roadmap
 
 - [x] Motor de reglas y heurísticas
@@ -71,10 +91,12 @@ Configura tus credenciales en `.env` (ver `.env.example`).
 - [x] Análisis con LLM + MITRE ATT&CK
 - [x] API REST con FastAPI
 - [x] Persistencia en base de datos
-- [ ] Conexión Gmail API
-- [ ] Embeddings y RAG para correlación de campañas
-- [ ] Dashboard de análisis
+- [x] Conexión Gmail API — emails reales
+- [x] Acciones automáticas en Gmail
 - [ ] Integración con VirusTotal
+- [ ] Docker
+- [ ] Dashboard de análisis
+- [ ] RAG para correlación de campañas
 
 ## Autor
 
