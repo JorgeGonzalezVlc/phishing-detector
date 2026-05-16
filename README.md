@@ -104,10 +104,12 @@ uvicorn main:app --reload
 Análisis de 3 emails reales — dos phishing y uno de phishing crítico.
 
 ### Análisis en terminal
-![Análisis de 3 emails reales](images/terminal_analisis.png)
+<img width="888" height="610" alt="imagen" src="https://github.com/user-attachments/assets/6a5d6a0c-ff43-437b-bdf8-235130e73bb5" />
+
 
 ### Resultado en Gmail — carpetas creadas automáticamente
-![Emails clasificados y movidos en Gmail](images/gmail_resultado.png)
+<img width="1898" height="432" alt="imagen" src="https://github.com/user-attachments/assets/861b295b-d1b5-4419-bf5a-36fe3d90f5fc" />
+
 
 ## Autor
 
