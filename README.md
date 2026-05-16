@@ -24,7 +24,7 @@ Analiza emails de Gmail en busca de indicadores de phishing combinando dos enfoq
     "Solicitud explícita de credenciales mediante enlace HTTP sin cifrado"
   ],
   "attack_summary": "Ataque de phishing bancario dirigido a clientes del Banco Santander. El atacante suplanta la identidad de la entidad mediante un dominio fraudulento para redirigir a las víctimas a una página de robo de credenciales.",
-  "recommended_action": "escalate"
+  "recommended_action": "delete"
 }
 ```
 
