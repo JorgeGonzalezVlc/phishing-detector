@@ -31,6 +31,7 @@ def analyze_with_llm(parsed_email: dict, iocs: dict, risk: dict) -> dict:
         risk_score   = risk.get("score", 0),
         severity     = risk.get("severity", "N/A"),
         reasons      = risk.get("reasons", []),
+        recommended_action = risk.get("recommended_action", "review"),
     )
 
     response = client.messages.create(

@@ -24,9 +24,10 @@ Emails:            {emails}
 ═══════════════════════════════════
 ANÁLISIS PRELIMINAR (reglas)
 ═══════════════════════════════════
-Risk Score:  {risk_score}/100
-Severidad:   {severity}
-Razones:     {reasons}
+Risk Score:           {risk_score}/100
+Severidad:            {severity}
+Razones:              {reasons}
+Acción recomendada:   {recommended_action}
 
 ═══════════════════════════════════
 

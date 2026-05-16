@@ -167,8 +167,20 @@ def calculate_risk_score(parsed_email: dict, iocs: dict) -> dict:
     else:
         severity = "low"
 
+    if score >= 90:
+        recommended_action = "delete"
+    elif score >= 70:
+        recommended_action = "escalate"
+    elif score >= 50:
+        recommended_action = "quarantine"
+    elif score >= 25:
+        recommended_action = "review"
+    else:
+        recommended_action = "safe"
+
     return {
-        "score":    score,
-        "severity": severity,
-        "reasons":  reasons
+        "score":              score,
+        "severity":           severity,
+        "reasons":            reasons,
+        "recommended_action": recommended_action
     }

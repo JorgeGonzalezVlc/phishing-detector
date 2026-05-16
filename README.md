@@ -30,9 +30,7 @@ Analiza emails de Gmail en busca de indicadores de phishing combinando dos enfoq
 
 ## Arquitectura
 
-Gmail API → Parser → IOC Extractor → Risk Engine → LLM (Claude) → JSON Response
-↓
-SQLite + FastAPI
+Gmail API → Parser → IOC Extractor → Risk Engine → LLM (Claude) → JSON Response (SQLite + FastAPI)
 
 ## Tecnologías
 
