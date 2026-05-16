@@ -98,6 +98,17 @@ uvicorn main:app --reload
 - [ ] Dashboard de análisis
 - [ ] RAG para correlación de campañas
 
+
+## 📧 Ejemplo práctico
+
+Análisis de 3 emails reales — dos phishing y uno de phishing crítico.
+
+### Análisis en terminal
+![Análisis de 3 emails reales](images/terminal_analisis.png)
+
+### Resultado en Gmail — carpetas creadas automáticamente
+![Emails clasificados y movidos en Gmail](images/gmail_resultado.png)
+
 ## Autor
 
 Jorge González — [LinkedIn](https://www.linkedin.com/in/jorge-gonz%C3%A1lez-gonz%C3%A1lez-5740614b/)
