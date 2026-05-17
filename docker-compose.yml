@@ -1,0 +1,12 @@
+services:
+  phishing-detector:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./token.pickle:/app/token.pickle
+      - ./credentials.json:/app/credentials.json
+      - ./phishing_detector.db:/app/phishing_detector.db
+    env_file:
+      - .env
+    restart: unless-stopped
