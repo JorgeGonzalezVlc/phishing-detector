@@ -23,7 +23,7 @@ def process_email(raw_email: dict):
     parsed = parse_email(raw_email)
     email_id = parsed["id"]
 
-    print(f"\n📧 Analizando: {parsed['subject'][:60]}")
+    print(f"\n Analizando: {parsed['subject'][:60]}")
     print(f"   De: {parsed['sender']}")
 
     # 2. Comprobar si ya fue analizado
@@ -32,16 +32,24 @@ def process_email(raw_email: dict):
         return
 
     # 3. Pipeline de análisis
-    iocs  = extract_iocs(parsed)
-    risk  = calculate_risk_score(parsed, iocs)
-    result = analyze_with_llm(parsed, iocs, risk)
+    iocs       = extract_iocs(parsed)
+    risk       = calculate_risk_score(parsed, iocs)
+
+    # VirusTotal — analizar URLs si las hay
+    vt_results = []
+    if iocs.get("urls"):
+        from core.virustotal import check_urls
+        vt_results = check_urls(iocs["urls"])
+
+    result = analyze_with_llm(parsed, iocs, risk, vt_results)
 
     # 4. Mostrar resultado
-    print(f"   🎯 Clasificación:  {result['classification']}")
-    print(f"   ⚠️  Risk Score:     {result['risk_score']}/100")
-    print(f"   🔴 Severidad:      {result['severity']}")
-    print(f"   🛡️  MITRE:          {result['mitre_technique']}")
-    print(f"   📋 Acción:         {result['recommended_action']}")
+    print(f"    Clasificación:  {result['classification']}")
+    print(f"    Risk Score:     {result['risk_score']}/100")
+    print(f"    Severidad:      {result['severity']}")
+    print(f"    MITRE:          {result['mitre_technique']}")
+    print(f"    VirusTotal:     {result['virus_total_score']}/100")
+    print(f"    Acción:         {result['recommended_action']}")
 
     # 5. Guardar en base de datos
     save_analysis({

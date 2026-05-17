@@ -157,6 +157,16 @@ def calculate_risk_score(parsed_email: dict, iocs: dict) -> dict:
         score += 20
         reasons.append(f"Adjuntos peligrosos: {', '.join(dangerous)}")  
 
+    # Regla 8 VirusTotal — URLs maliciosas confirmadas (30 puntos)
+    from core.virustotal import check_urls
+    urls = iocs.get("urls", [])
+    if urls:
+        vt_results = check_urls(urls)
+        malicious_urls = [r for r in vt_results if r.get("is_malicious")]
+        if malicious_urls:
+            score += 30
+            reasons.append(f"URLs maliciosas confirmadas por VirusTotal: {len(malicious_urls)}")
+
     # Calculamos severidad según el score
     if score >= 75:
         severity = "critical"

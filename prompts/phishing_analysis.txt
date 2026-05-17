@@ -28,6 +28,7 @@ Risk Score:           {risk_score}/100
 Severidad:            {severity}
 Razones:              {reasons}
 Acción recomendada:   {recommended_action}
+VirusTotal URLs analizadas: {vt_results}
 
 ═══════════════════════════════════
 
@@ -46,5 +47,6 @@ Responde ÚNICAMENTE con este JSON exacto, sin explicaciones ni texto adicional:
     "mitre_technique_name": "nombre de la técnica",
     "reasons": ["razón 1", "razón 2", "razón 3"],
     "attack_summary": "resumen del posible ataque en 2-3 frases",
+    "virus_total_score": 0-100,
     "recommended_action": "delete | quarantine | escalate | review | safe"
 }}
