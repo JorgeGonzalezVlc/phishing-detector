@@ -135,14 +135,18 @@ uvicorn main:app --reload
 Análisis de 3 emails reales.
 
 
+
 ### Partimos de 3 mails sin leer
+<img width="1128" height="460" alt="imagen" src="https://github.com/user-attachments/assets/aa3d78f0-8c50-484f-8513-63b610df6f7d" />
 
 
 ### Análisis en terminal
+<img width="885" height="685" alt="imagen" src="https://github.com/user-attachments/assets/86870580-fc74-4258-8064-1f94917ef484" />
 
 
 
-### Resultado en Gmail — carpetas creadas automáticamente
+### Resultado en Gmail — correo abierto y analizado con la etiqueta correspondiente
+<img width="1219" height="547" alt="imagen" src="https://github.com/user-attachments/assets/2c6e531b-39cf-4192-8ca8-d763afbe469e" />
 
 
 
