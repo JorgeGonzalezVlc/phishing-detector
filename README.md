@@ -144,7 +144,8 @@ Análisis de 3 emails reales.
 
 
 ### Resultado en Gmail — correo abierto y analizado con la etiqueta correspondiente
-<img width="1219" height="547" alt="imagen" src="https://github.com/user-attachments/assets/2c6e531b-39cf-4192-8ca8-d763afbe469e" />
+<img width="1004" height="447" alt="imagen" src="https://github.com/user-attachments/assets/087df419-1249-43af-95fb-1e708d6609c4" />
+
 
 
 
