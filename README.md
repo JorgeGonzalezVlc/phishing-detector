@@ -115,8 +115,6 @@ uvicorn main:app --reload
 
 ---
 
-```
-
 ## Roadmap
 
 - [x] Motor de reglas y heurísticas
